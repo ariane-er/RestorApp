@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
+    <script src="/static/js/welcome.js"></script>
+    <link href="/static/css/welcome.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="appContainer">
+    <img src="/static/pictures/Welcome_to_Restorapp.png" alt="Welcome to Restorapp">
+    <br><br>
+
+    <div id="mainButtons">
+        <form>
+            <input type="button" id="signUpButton" class="mbtns" value="Sign Up"><br>
+        </form>
+    <br>
+        <form>
+            <input type="button" id="logInButton" class="mbtns" value="Log In">
+        </form>
+    </div>
+
+    <div id="logInApplet">
+        <form id="logInForm" method="POST">
+            <input id="logInUsername" type="text" name="username" placeholder="Username here.">
+            <br><br>
+            <input id="logInPassword" type="password" name="password" placeholder="Password here.">
+            <br><br>
+            <input type="submit" id="submitLogIn" value="Let's go!">
+            <br><br>
+        </form>
+    </div>
+
+    <div id="signUpApplet">
+        <form action="/app" method="POST">
+            <input type="text" name="username" placeholder="Username">
+            <br><br>
+            <input type="password" name="password" placeholder="Password">
+            <br><br>
+            <input type="password" name="confirmPassword" placeholder="Confirm your password.">
+            <br><br>
+            <input type="submit" id="submitSignUp" value="Let's go!">
+            <br><br>
+        </form>
+    </div>
+
+</div>
+
+	<div id="successAlert" class="alert alert-success" role="alert" style="display:none;"></div>
+	<div id="errorAlert" class="alert alert-danger" role="alert" style="display:none;"></div>
+
+</body>
+</html>

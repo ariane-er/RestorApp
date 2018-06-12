@@ -1,0 +1,53 @@
+body {
+    background-image: url("https://d9np3dj86nsu2.cloudfront.net/image/0e7e7b1a011968d7c0a762824c554630");
+    background-color: #eda553;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: -webkit-linear-gradient(left,
+    rgba(0,0,0,0.9) 0%,
+    rgba(0,0,0,0) 20%,
+    rgba(0,0,0,0) 80%,
+    rgba(0,0,0,0.9) 100%
+  ),
+  url(https://d9np3dj86nsu2.cloudfront.net/image/0e7e7b1a011968d7c0a762824c554630);
+}
+
+img {
+  height: 200px;
+  width: 400px;
+}
+
+
+.appContainer {
+/*This is going to center the container in any screen.*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* styles main buttons */
+.mbtns {
+    background-color: #e8983f;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    font-family: 'Georgia';
+    height: 200px;
+    width: 400px;
+    border-radius: 30px;
+    border: 5px solid #58340b;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.mbtns:hover {
+  background-color: #f9e3cb;
+  color: #58340b;
+}
