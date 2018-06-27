@@ -1,0 +1,232 @@
+#backgroundMap {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+
+    }
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+img {
+    width: 250px;
+
+    }
+
+.sideNavigation {
+    text-align: center;
+    background-image: url("https://d9np3dj86nsu2.cloudfront.net/image/0e7e7b1a011968d7c0a762824c554630");
+    background-color: #eda553;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: -webkit-linear-gradient(left,
+    rgba(0,0,0,0.9) 0%,
+    rgba(0,0,0,0) 20%,
+    rgba(0,0,0,0) 80%,
+    rgba(0,0,0,0.9) 100%
+  ),
+  url(https://d9np3dj86nsu2.cloudfront.net/image/0e7e7b1a011968d7c0a762824c554630);
+    height: 100%;
+    width: 450px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sideNavigation a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sideNavigation a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 450px; /* Same as the width of the sideNavigation */
+    font-size: 28px; /* Increased text to enable scrolling */;
+    height: 100%;
+}
+
+@media screen and (max-height: 450px) {
+    .sideNavigation {padding-top: 15px;}
+    .sideNavigation a {font-size: 18px;}
+}
+
+* {box-sizing: border-box;}
+
+/* Set height of body and the document to 100% */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+    background-color: #431c04;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: #431c04;
+    color: #eee4d4;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50%;
+}
+
+.tablink:hover {
+    background-color: #eee4d4;
+    color: #431c04;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: #431c04;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+.accordion {
+    background-color: #431c04;
+    color: #eee4d4;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    text-align: center;
+}
+
+.active, .accordion:hover {
+    color: #431c04;
+    background-color: #eee4d4;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: #f9f6f0;
+    overflow: hidden;
+}
+
+#searchInput {
+    width: 210px;
+    box-sizing: border-box;
+    border: 2px solid #431c04;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f9f6f0;
+    background-image: url("/static/pictures/Search.png");
+    background-size: 25px 25px;
+    background-position: 8px 8px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#searchInput:focus {
+    width: 100%;
+}
+
+.smallButtons:hover {
+  background-color: #f9e3cb;
+  color: #58340b;
+}
+.smallButtons {
+    background-color: #e8983f;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    font-family: 'Georgia';
+    height: 60px;
+    width: 150px;
+    border-radius: 30px;
+    border: 3px solid #58340b;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    position:fixed;
+    margin-bottom: 20px;
+    bottom:0px;
+
+}
+
+#usernameContainer  {
+    width: 100%;
+    height: 60px;
+    background-color: #f9e3cb;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 15px;
+    font-family: 'Georgia';
+
+}
+
+.restaurantRow {
+    color: black;
+    text-align: left;
+    width: 100%;
+    font-size: 20px;}
+
+#restaurantView {
+    color: white;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

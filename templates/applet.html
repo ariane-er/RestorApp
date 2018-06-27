@@ -1,10 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Applet</title>
+    <title>RestorApp</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEKFLGE5K0rtpBIjX4DbhPj9KUSDHz2sA"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
+    <script src="/static/js/applet.js"></script>
+    <link href="/static/css/applet.css" rel="stylesheet">
 </head>
 <body>
-What's up boyzzzz
+
+<div class="sideNavigation">
+    <img src="/static/pictures/Welcome_to_Restorapp.png" alt="Welcome to Restorapp">
+    <br>
+    <div id="usernameContainer"></div>
+    <br>
+    <form><input type="text" id="searchInput" name="search" placeholder="Search restaurant..."></form>
+    <br>
+    <button id="filterByAccordion" class="accordion">Filter by...</button>
+    <div id="filtersContainer" class="panel">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button id="faveRestsAccordion" class="accordion">Your favourite restaurants...</button>
+    <div id="faveRestsContainer" class="panel">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <input type="button" class="smallButtons" id="logOut" value="Log Out">
+
+</div>
+
+<div class="main">
+    <div id="tabContainer">
+    <button class="tablink" id="mapTabButton">Map</button>
+    <button class="tablink" id="listTabButton">List</button>
+    </div>
+
+    <div id="backgroundMapContainer" class="tabcontent">
+        <div id="backgroundMap"></div>
+    </div>
+
+    <div id="listView" class="tabcontent"></div>
+
+    <div id="restaurantView" class="tabcontent"></div>
+
+  </div>
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form id="newRestaurantForm" method="POST">
+        <input id="newRName" type="text" name="newRName" placeholder="Name of the restaurant">
+        <br><br>
+        <input id="newRDescription" type="text" name="newRDescription" placeholder="Description of the restaurant">
+        <br><br>
+        <input type="checkbox" id="takeaway" name="takeaway" value="takeaway">Takeaway
+        <br>
+        <input type="checkbox" id="eatin" name="eatin" value="eatin">Eatin
+        <br>
+        <input type="checkbox" id="delivery" name="delivery" value="delivery">Delivery
+        <br>
+        <input type="checkbox" id="kidfriendly" name="kidfriendly" value="kidfriendly">Kid-Friendly
+        <br>
+        <input type="checkbox" id="vegetarian" name="vegetarian" value="vegetarian">Vegetarian
+        <br>
+        <input type="checkbox" id="favourite" name="favourite" value="favourite">Favourite
+        <br>
+        <input type="submit" id="submitRestaurant" value="Add Restaurant">
+
+    </form>
+  </div>
+
+</div>
+
 </body>
 </html>

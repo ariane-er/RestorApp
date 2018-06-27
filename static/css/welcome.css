@@ -47,7 +47,46 @@ img {
     cursor: pointer;
 }
 
-.mbtns:hover {
+.mbtns:hover, .smallButtons:hover {
   background-color: #f9e3cb;
   color: #58340b;
+}
+
+input[type=text], input[type=password] {
+    width: 400px;
+    background-color: #f9e3cb;
+    height: 50px;
+    font-size: 30px;
+    font-family:'Georgia';
+    text-align: center;
+    border: 3px solid #58340b;
+    border-radius: 25px;}
+
+.smallButtons {
+    background-color: #e8983f;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    font-family: 'Georgia';
+    height: 60px;
+    width: 150px;
+    border-radius: 30px;
+    border: 3px solid #58340b;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+
+#submitLogIn, #submitSignUp {
+    float: right;
+    margin: 20px;
+}
+
+#backLogIn, #backSignUp {
+    float: left;
+    margin: 20px;
 }
