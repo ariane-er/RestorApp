@@ -112,9 +112,15 @@ def processLogin():
     for user in users:
         if user.username == logInUsername and user.password == logInPassword:
             session['logged'] = user.userid;
-            return jsonify({'success' : '/applet'})
+            if request.headers.get("User-Agent")=="android":
+                return jsonify({'success' : True})
+            else:
+                return jsonify({'success' : '/applet'})
         else:
-            return jsonify({'error': 'Login failed. Try again.'})
+            if request.headers.get("User-Agent")=="android":
+                return jsonify({'success' : False})
+            else:
+                return jsonify({'error': 'Login failed. Try again.'})
 
 @app.route('/processSignUp', methods=['GET', 'POST'])
 def processSignUp():
@@ -141,11 +147,20 @@ def processSignUp():
             session.commit()
             print("User added successfully.")
             session['logged'] = newuser.userid;
-            return jsonify({'success': '/applet'})
+            if request.headers.get("User-Agent")=="android":
+                return jsonify({'status': 1}) #signup successful
+            else:
+                return jsonify({'success': '/applet'})
         else:
-            return jsonify({'error': 'Passwords do not match.'})
+            if request.headers.get("User-Agent")=="android":
+                return jsonify({'status': 2})  #passwords don't match
+            else:
+                return jsonify({'error': 'Passwords do not match.'})
     else:
-        return jsonify({'usernameexists': 'Username already exists'})
+        if request.headers.get("User-Agent")=="android":
+            return jsonify({'status': 3}) #username exists
+        else:
+            return jsonify({'usernameexists': 'Username already exists'})
 
 @app.route('/newRestaurant', methods=['GET','POST'])
 def newRestaurant():
